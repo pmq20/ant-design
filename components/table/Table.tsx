@@ -722,20 +722,22 @@ export default class Table<T> extends React.Component<TableProps<T>, any> {
         const isDescend = isSortColumn && sortOrder === 'descend';
         sortButton = (
           <div className={`${prefixCls}-column-sorter`}>
-            <span
-              className={`${prefixCls}-column-sorter-up ${isAscend ? 'on' : 'off'}`}
-              title="↑"
-              onClick={() => this.toggleSortOrder('ascend', column)}
-            >
-              <Icon type="caret-up" />
-            </span>
-            <span
-              className={`${prefixCls}-column-sorter-down ${isDescend ? 'on' : 'off'}`}
-              title="↓"
-              onClick={() => this.toggleSortOrder('descend', column)}
-            >
-              <Icon type="caret-down" />
-            </span>
+            <div className={`${prefixCls}-column-sorter-icon-wrapper`}>
+              <span
+                className={`${prefixCls}-column-sorter-up ${isAscend ? 'on' : 'off'}`}
+                title="↑"
+                onClick={() => this.toggleSortOrder('ascend', column)}
+              >
+                <Icon type="caret-up" />
+              </span>
+              <span
+                className={`${prefixCls}-column-sorter-down ${isDescend ? 'on' : 'off'}`}
+                title="↓"
+                onClick={() => this.toggleSortOrder('descend', column)}
+              >
+                <Icon type="caret-down" />
+              </span>
+            </div>
           </div>
         );
       }
